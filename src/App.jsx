@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Vans from "./Pages/Vans";
+import VansDetails from "./Pages/VansDetails";
 // import Navbar from "./Components/Navbar";
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={<Vans />} />
+        <Route path="/vans/:id" element={<VansDetails />} />
       </Routes>
     </BrowserRouter>
   );
