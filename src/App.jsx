@@ -3,24 +3,27 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Vans from "./Pages/Vans";
 import VansDetails from "./Pages/VansDetails";
+import Layout from "./Components/Layout";
+import Dashboard from "./Pages/host/dashboard";
+import Income from "./Pages/host/income";
+import Reviews from "./Pages/host/reviews";
+import HostLayout from "./Components/HostLayout";
 // import Navbar from "./Components/Navbar";
 const App = () => {
   return (
     <BrowserRouter>
-      <header>
-        <Link className="site-logo" to="/">
-          #VanLife
-        </Link>
-        <nav>
-          <Link to="/about">About</Link>
-          <Link to="/vans">Vans</Link>
-        </nav>
-      </header>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/vans" element={<Vans />} />
-        <Route path="/vans/:id" element={<VansDetails />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/vans" element={<Vans />} />
+          <Route path="/vans/:id" element={<VansDetails />} />
+          <Route element={<HostLayout />}>
+            <Route path="/host" element={<Dashboard />} />
+            <Route path="/host/income" element={<Income />} />
+            <Route path="/host/reviews" element={<Reviews />} />
+          </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
