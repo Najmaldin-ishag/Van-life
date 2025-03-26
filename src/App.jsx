@@ -10,6 +10,9 @@ import Reviews from "./Pages/host/reviews";
 import HostVanDetails from "./Pages/host/HostVanDetails";
 import HostLayout from "./Components/HostLayout";
 import HostVans from "./Pages/host/HostVans";
+import HostVanInfo from "./Pages/host/HostVanInfo";
+import HostVanPricing from "./Pages/host/HostVanPricing";
+import HostVanPhoto from "./Pages/host/HostVanPhoto";
 // import Navbar from "./Components/Navbar";
 const App = () => {
   return (
@@ -25,7 +28,11 @@ const App = () => {
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="vans" element={<HostVans />} />
-            <Route path="vans/:id" element={<HostVanDetails />} />
+            <Route path="vans/:id" element={<HostVanDetails />}>
+              <Route index element={<HostVanInfo />} />
+              <Route path="pricing" element={<HostVanPricing />} />
+              <Route path="photos" element={<HostVanPhoto />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
