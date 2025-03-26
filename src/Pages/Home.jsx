@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -8,9 +8,9 @@ export default function Home() {
         Add adventure to your life by joining the #vanlife movement. Rent the
         perfect van to make your perfect road trip.
       </p>
-      <Link className="btn-van" to="vans">
+      <NavLink className="btn-van" to="vans">
         Find your van
-      </Link>
+      </NavLink>
     </div>
   );
 }
